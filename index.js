@@ -16,7 +16,7 @@ var conn = new mssql.Connection(mssqlConfig.prepare.mssql, function (err) {
     if (err) return cb(err)
     console.log('-----------------')
     conn.close()
-    fs.writeFileSync(path.join(__dirname, 'data'), set)
+    fs.writeFileSync(path.join(__dirname, 'data'), JSON.stringify(set, 0, 2))
   })
 })
 
