@@ -1,0 +1,8 @@
+{
+  "name": "mssql-test",
+  "version": "0.0.0",
+  "description": "test mssql connection",
+  "dependencies": {
+    "mssql": "^0.4.1"
+  }
+}
