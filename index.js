@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var fs = require('fs')
+var path = require('path')
 var mssql = require('mssql')
 
 var mssqlConfig = JSON.parse(fs.readFileSync(process.argv[2]).toString())
@@ -14,7 +15,8 @@ var conn = new mssql.Connection(mssqlConfig.prepare.mssql, function (err) {
   req.execute('GetHoldCampusNord', function (err, set) {
     if (err) return cb(err)
     console.log('-----------------')
-    console.log(set)
+    conn.close()
+    fs.writeFileSync(path.join(__dirname, 'data'))
   })
 })
 
