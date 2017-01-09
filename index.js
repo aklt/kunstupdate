@@ -7,7 +7,7 @@ var mssqlConfig = JSON.parse(fs.readFileSync(process.argv[2]).toString())
 
 console.warn(mssqlConfig)
 
-var conn = new mssql.Connection(mssqlConfig, function (err) {
+var conn = new mssql.Connection(mssqlConfig.prepare.mssql, function (err) {
   if (err) return cb(err)
   console.warn(conn)
   var req = conn.request()
