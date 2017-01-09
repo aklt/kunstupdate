@@ -5,19 +5,20 @@ var mssql = require('mssql')
 
 var mssqlConfig = JSON.parse(fs.readFileSync(process.argv[2]).toString())
 
-console.warn(mssqlConfig)
+console.log(mssqlConfig)
 
 var conn = new mssql.Connection(mssqlConfig.prepare.mssql, function (err) {
   if (err) return cb(err)
-  console.warn(conn)
+  console.log(conn)
   var req = conn.request()
   req.execute('GetHoldCampusNord', function (err, set) {
     if (err) return cb(err)
-    console.warn(set)
+    console.log('-----------------')
+    console.log(set)
   })
 })
 
 function cb (err) {
-  if (err) console.warn(err.stack)
+  if (err) console.log(err.stack)
   throw err
 }
