@@ -29,6 +29,8 @@ var conn = new mssql.Connection(mssqlConfig.prepare.mssql, function (err) {
 })
 
 function cb (err) {
-  if (err) console.log(err.stack)
-  throw err
+  if (err) {
+    console.log(err.stack)
+    throw err
+  }
 }
