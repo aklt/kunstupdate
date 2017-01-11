@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "test mssql connection",
   "bin": {
-      "dump-db": "./dump-db.js"
+      "dump-db": "./dump-db.js",
+      "merge-data": "./merge-data.js"
   },
   "dependencies": {
     "mssql": "^0.4.1"
